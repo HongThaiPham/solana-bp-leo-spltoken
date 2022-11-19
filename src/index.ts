@@ -1,13 +1,21 @@
 import { initializeKeypair } from "./initializeKeypair";
 import * as web3 from "@solana/web3.js";
 import * as token from "@solana/spl-token";
+
 import {
   burnTokens,
   createNewMint,
   createTokenAccount,
+  createTokenMetadata,
   mintTokens,
   transferTokens,
+  updateTokenMetadata,
 } from "./utils";
+import {
+  bundlrStorage,
+  keypairIdentity,
+  Metaplex,
+} from "@metaplex-foundation/js";
 
 async function main() {
   const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
@@ -27,12 +35,12 @@ async function main() {
   );
 
   const receiver = web3.Keypair.generate().publicKey;
-  const receiverTokenAccount = await createTokenAccount(
-    connection,
-    user,
-    mint,
-    receiver
-  );
+  // const receiverTokenAccount = await createTokenAccount(
+  //   connection,
+  //   user,
+  //   mint,
+  //   receiver
+  // );
 
   // const tokenAccount = await createTokenAccount(
   //   connection,
@@ -47,17 +55,48 @@ async function main() {
   // Mint 100 tokens to our address
   // await mintTokens(connection, user, mint, tokenAccount, user, 100);
 
-  await transferTokens(
-    connection,
-    user,
-    tokenAccount,
-    receiverTokenAccount.address,
-    user.publicKey,
-    50,
-    mint
-  );
+  // await transferTokens(
+  //   connection,
+  //   user,
+  //   tokenAccount,
+  //   receiverTokenAccount.address,
+  //   user.publicKey,
+  //   50,
+  //   mint
+  // );
 
-  await burnTokens(connection, user, tokenAccount, mint, user, 25);
+  // await burnTokens(connection, user, tokenAccount, mint, user, 25);
+
+  const metaplex = Metaplex.make(connection)
+    .use(keypairIdentity(user))
+    .use(
+      bundlrStorage({
+        address: "https://devnet.bundlr.network",
+        providerUrl: "https://api.devnet.solana.com",
+        timeout: 60000,
+      })
+    );
+
+  // Calling the token
+  // await createTokenMetadata(
+  //   connection,
+  //   metaplex,
+  //   mint,
+  //   user,
+  //   "LEO Token", // Token name
+  //   "LEO", // Token symbol
+  //   "LEO token for LEO party" // Token description
+  // );
+
+  await updateTokenMetadata(
+    connection,
+    metaplex,
+    mint,
+    user,
+    "OEL Token- Updated", // Token name
+    "OEL", // Token symbol
+    "The revert token of LEO token" // Token description
+  );
 }
 
 main()
