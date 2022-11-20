@@ -5,6 +5,7 @@
   "image": "collection.png",
   "attributes": [],
   "properties": {
+    "category": "image",
     "files": [
       {
         "uri": "collection.png",

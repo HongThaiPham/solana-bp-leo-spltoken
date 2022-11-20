@@ -1,28 +1,29 @@
 {
-    "name": "Studious Crab #8",
-    "symbol": "CRAB",
-    "description": "The Studious Crabs are smart and productive crabs.",
-    "image": "7.png",
-    "attributes": [
-        {
-            "trait_type": "accessory",
-            "value": "binder"
-        },
-        {
-            "trait_type": "accessory",
-            "value": "clipboard"
-        },
-        {
-            "trait_type": "books",
-            "value": "various"
-        }
-    ],
-    "properties": {
-        "files": [
-            {
-                "uri": "7.png",
-                "type": "image/png"
-            }
-        ]
+  "name": "Studious Crab #8",
+  "symbol": "LEOC",
+  "description": "The Studious Crabs are smart and productive crabs.",
+  "image": "7.png",
+  "attributes": [
+    {
+      "trait_type": "accessory",
+      "value": "binder"
+    },
+    {
+      "trait_type": "accessory",
+      "value": "clipboard"
+    },
+    {
+      "trait_type": "books",
+      "value": "various"
     }
+  ],
+  "properties": {
+    "category": "image",
+    "files": [
+      {
+        "uri": "7.png",
+        "type": "image/png"
+      }
+    ]
+  }
 }
