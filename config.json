@@ -1,7 +1,10 @@
 {
   "price": 0.05,
   "number": 10,
-  "gatekeeper": null,
+  "gatekeeper": {
+    "gatekeeperNetwork": "ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6",
+    "expireOnUse": true
+  },
   "creators": [
     {
       "address": "9wN9MdEPGa3fTMGA9TUjKcKdP19EmsXgCE5BCNxvMMDs",
@@ -11,9 +14,14 @@
   "solTreasuryAccount": "9wN9MdEPGa3fTMGA9TUjKcKdP19EmsXgCE5BCNxvMMDs",
   "splTokenAccount": null,
   "splToken": null,
-  "goLiveDate": "2022-11-20T14:11:59.094836+00:00",
+  "goLiveDate": "2022-11-20T14:55:59.094836+00:00",
   "endSettings": null,
-  "whitelistMintSettings": null,
+  "whitelistMintSettings": {
+    "mode": "burnEveryTime",
+    "mint": "9fg6S7j7nQ9UGs2NpbdBPA869QNCxA2U6HzXbR2FRbkV",
+    "presale": true,
+    "discountPrice": null
+  },
   "hiddenSettings": null,
   "freezeTime": null,
   "uploadMethod": "bundlr",
