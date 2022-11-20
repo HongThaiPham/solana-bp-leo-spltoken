@@ -6,7 +6,7 @@ async function main() {
   const user = await initializeKeypair(connection);
 
   console.log("PublicKey:", user.publicKey.toBase58());
-  await allInOneTransaction(connection, user, user.publicKey, 9);
+  await allInOneTransaction(connection, user, 9, 50);
 }
 
 main()
